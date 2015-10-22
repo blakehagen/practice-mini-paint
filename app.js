@@ -7,6 +7,23 @@ $(document).ready(function(){
 		$(this).addClass(color);
 	});
 	
+	var isPressed = false;
+	$('.box').on('mousedown', function(){
+		isPressed = true;
+	});
+	
+	$('.box').on('mouseup', function(){
+		isPressed = false;
+	});
+	
+	$('.box').on('mouseenter', function(){
+		if(isPressed){
+			$(this).addClass(color);	
+		}
+	});
+	
+	
+	
 	$('.box').on('dblclick', function(){
 		$(this).removeClass(colors);
 	});
